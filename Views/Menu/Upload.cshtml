@@ -1,0 +1,41 @@
+@{
+    ViewData["Title"] = "Upload Menu Images";
+}
+
+<div class="container mt-5">
+    <div class="card shadow-sm">
+        <div class="card-header bg-dark text-white">
+            <h4 class="mb-0">Upload Restaurant Menu Images</h4>
+        </div>
+        <div class="card-body">
+
+            <div class="mb-3">
+                <label for="restaurantName" class="form-label fw-semibold">Restaurant Name</label>
+                <input type="text" id="restaurantName" class="form-control"
+                       placeholder="e.g. Bella Italia" required />
+                <div class="form-text">If the restaurant already exists, images will be added to it.</div>
+            </div>
+
+            <div class="mb-3">
+                <label for="fileInput" class="form-label fw-semibold">
+                    Select Menu Images
+                    <span class="text-muted fw-normal">(jpg, jpeg, png — multiple allowed)</span>
+                </label>
+                <input type="file" id="fileInput" class="form-control"
+                       accept=".jpg,.jpeg,.png" multiple />
+            </div>
+
+            <button id="uploadBtn" class="btn btn-primary px-4">
+                Upload Images
+            </button>
+
+            <!-- Per-file progress list -->
+            <div id="progressContainer" class="mt-4"></div>
+
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/upload.js"></script>
+}

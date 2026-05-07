@@ -1,0 +1,30 @@
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="container mt-5 text-center">
+    <h1 class="display-4">🍽️ MenuCloud</h1>
+    <p class="lead text-muted">
+        Upload restaurant menus and search for dishes across multiple restaurants.
+    </p>
+
+    @if (User.Identity != null && User.Identity.IsAuthenticated)
+    {
+        <div class="mt-4">
+            <a asp-controller="Menu" asp-action="Upload" class="btn btn-primary btn-lg me-3">
+                Upload a Menu
+            </a>
+            <a asp-controller="Menu" asp-action="Index" class="btn btn-outline-secondary btn-lg">
+                Browse Catalog
+            </a>
+        </div>
+    }
+    else
+    {
+        <div class="mt-4">
+            <a asp-controller="Account" asp-action="Login" class="btn btn-primary btn-lg">
+                Sign In with Google
+            </a>
+        </div>
+    }
+</div>
