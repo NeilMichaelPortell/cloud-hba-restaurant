@@ -99,10 +99,6 @@ build/
 .DS_Store
 Thumbs.db
 
-service-account.json
-oauth.json
-
-
 bin/
 obj/
 .vs/
