@@ -18,11 +18,10 @@ builder.Services.AddAuthentication(options =>
 .AddCookie()
 .AddGoogle(GoogleDefaults.AuthenticationScheme, options =>
 {
-    //options.ClientId = builder.Configuration["Authentication:Google:ClientId"]!;
-    //options.ClientSecret = builder.Configuration["Authentication:Google:ClientSecret"]!;
+    options.ClientId = builder.Configuration["Authentication:Google:ClientId"]!;
+    options.ClientSecret = builder.Configuration["Authentication:Google:ClientSecret"]!;
 
-    options.ClientId = builder.Configuration["id"]!;
-    options.ClientSecret = builder.Configuration["secret"]!;
+
     options.Scope.Add("profile");
     options.Events.OnCreatingTicket = (context) =>
     {
